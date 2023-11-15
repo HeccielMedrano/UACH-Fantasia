@@ -195,10 +195,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         // Si el dash se hace en vertical
         if(dashingDirection.normalized.x == 0)
-            dashingVelocity = 16f;
+            dashingVelocity = 25f;
         // Si el dash se hace en alguna de las diagonales
         else if (dashingDirection.normalized.x < 1 && dashingDirection.normalized.x > 0 || dashingDirection.normalized.x > -1 && dashingDirection.normalized.x < 0)
-            dashingVelocity = 17f;
+            dashingVelocity = 25f;
         else
             dashingVelocity = 25f;
 
