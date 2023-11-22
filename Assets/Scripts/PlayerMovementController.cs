@@ -52,6 +52,9 @@ public class PlayerMovementController : MonoBehaviour
     public float wallJumpingDuration = 0.2f;
     private Vector2 wallJumpingPower = new Vector2(10f, 8f);
 
+    //Variable animator
+    private Animator animator;
+
 
     ///////////////////////
     // Seccion de codigo //
@@ -59,6 +62,8 @@ public class PlayerMovementController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //componente
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -85,6 +90,12 @@ public class PlayerMovementController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpTimer = Time.time + jumpDelay;
+            //animacion
+            animator.SetBool("Jumping", true);
+        }
+        else
+        {
+            animator.SetBool("Jumping", false);
         }
 
         // Para saber si el jugador esta en el suelo
@@ -108,10 +119,12 @@ public class PlayerMovementController : MonoBehaviour
             isDashing = true;
             canDash = false;
             dashingDirection = new Vector2(Input.GetAxisRaw("HorizontalMovement"), Input.GetAxisRaw("VerticalMovement"));
-
+            //animacion dash
+            animator.SetBool("Dash", true);
             if (dashingDirection == Vector2.zero)
             {
                 dashingDirection = new Vector2(transform.localScale.x, 0);
+               
             }
             StartCoroutine(StopDash());
         }
@@ -126,7 +139,15 @@ public class PlayerMovementController : MonoBehaviour
         {
             canDash = true;
         }
-
+        // activar/desactivar animacion de caida
+        if(rb.velocity.y<0)
+        {
+            animator.SetBool("Fall", true);
+        }
+        else
+        {
+            animator.SetBool("Fall", false);
+        }
         // Condicionales y metodos referentes al wall-slide y wall-jump
         WallSlide();
         WallJump();
@@ -142,6 +163,15 @@ public class PlayerMovementController : MonoBehaviour
     private void Walk(Vector2 direction)
     {
         rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+        //Activar animaicon de caminar
+        if(x!=0)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
     }
 
     // Metodos referentes al salto
@@ -189,6 +219,8 @@ public class PlayerMovementController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
+        //detener animacion dash
+        animator.SetBool("Dash", false);
     }
 
     private float CalculateDashAmount()
@@ -226,10 +258,14 @@ public class PlayerMovementController : MonoBehaviour
         {
             isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            //On wall del animator
+            animator.SetBool("Onwall", true);
         }
         else
         {
             isWallSliding = false;
+            //Onwall animator
+            animator.SetBool("Onwall", false);
         }
     }
 
