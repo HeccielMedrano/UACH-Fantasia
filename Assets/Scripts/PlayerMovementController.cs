@@ -25,7 +25,7 @@ public class PlayerMovementController : MonoBehaviour
     public LayerMask groundLayer;
     public bool grounded;
     float groundLength = 0.6f;
-    public Vector3 colliderOffset;
+    private Vector3 colliderOffset = new Vector3(0.29f, 0.18f, 0f);
 
     // Variables dedicadas al dash
     private float dashingVelocity = 25f;
@@ -151,13 +151,14 @@ public class PlayerMovementController : MonoBehaviour
         // Condicionales y metodos referentes al wall-slide y wall-jump
         WallSlide();
         WallJump();
-
-        if(!isWallJumping)
-        {
-
-        }
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position + colliderOffset, Vector2.down);
+        Gizmos.DrawRay(transform.position - colliderOffset, Vector2.down);
+    }
 
     // Metodos referentes a caminar
     private void Walk(Vector2 direction)
@@ -227,12 +228,21 @@ public class PlayerMovementController : MonoBehaviour
     {
         // Si el dash se hace en vertical
         if(dashingDirection.normalized.x == 0)
-            dashingVelocity = 25f;
+        {
+            dashingVelocity = 16f;
+            dashingTime = 0.08f;
+        }
         // Si el dash se hace en alguna de las diagonales
         else if (dashingDirection.normalized.x < 1 && dashingDirection.normalized.x > 0 || dashingDirection.normalized.x > -1 && dashingDirection.normalized.x < 0)
-            dashingVelocity = 25f;
+        {
+            dashingVelocity = 17.4f;
+            dashingTime = 0.08f;
+        }
         else
-            dashingVelocity = 25f;
+        {
+            dashingVelocity = 24f;
+            dashingTime = 0.08f;
+        }
 
         return dashingVelocity;
     }
@@ -242,9 +252,9 @@ public class PlayerMovementController : MonoBehaviour
     private void flipWallCheck(bool isLookingRight)
     {
         if (!isLookingRight)
-            wallCheck.position = new UnityEngine.Vector2(playerTransform.position.x - 0.5f, playerTransform.position.y + 0.3f);
+            wallCheck.position = new UnityEngine.Vector2(playerTransform.position.x - 0.5f, playerTransform.position.y);
         else
-            wallCheck.position = new UnityEngine.Vector2(playerTransform.position.x + 0.5f, playerTransform.position.y + 0.3f);
+            wallCheck.position = new UnityEngine.Vector2(playerTransform.position.x + 0.5f, playerTransform.position.y);
     }
     
     private bool IsWalled()
