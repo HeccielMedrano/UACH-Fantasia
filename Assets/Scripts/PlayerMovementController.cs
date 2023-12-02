@@ -241,7 +241,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             dashingVelocity = 24f;
-            dashingTime = 0.08f;
+            dashingTime = 0.12f;
         }
 
         return dashingVelocity;
