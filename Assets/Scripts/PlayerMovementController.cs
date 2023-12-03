@@ -8,6 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     //////////////////////////
     // Variables dedicadas a componentes del jugador
     private Rigidbody2D rb;
+    private BoxCollider2D coll;
 
     // Variables dedicadas al movimiento del jugador
     float x;
@@ -64,6 +65,7 @@ public class PlayerMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //componente
         animator = GetComponent<Animator>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -99,8 +101,9 @@ public class PlayerMovementController : MonoBehaviour
         }
 
         // Para saber si el jugador esta en el suelo
-        grounded = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) ||
-            Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
+        grounded = isGrounded();
+        /*Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) ||
+            Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);*/
         
         // Caida rapida
         if (rb.velocity.y < 0)
@@ -153,12 +156,17 @@ public class PlayerMovementController : MonoBehaviour
         WallJump();
     }
 
-    void OnDrawGizmosSelected()
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
+    }
+
+    /*void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + colliderOffset, Vector2.down);
         Gizmos.DrawRay(transform.position - colliderOffset, Vector2.down);
-    }
+    }*/
 
     // Metodos referentes a caminar
     private void Walk(Vector2 direction)
