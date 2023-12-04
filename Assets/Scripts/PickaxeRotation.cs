@@ -5,16 +5,16 @@ using UnityEngine.WSA;
 
 public class PickaxeRotation : MonoBehaviour
 {
-    public float rotationSpeed = 1000f;
+    float rotationSpeed = 1000f;
 
-    /*public float minLaunchForce = 5f;
+    public float minLaunchForce = 5f;
     public float maxLaunchForce = 7f;
     public float upwardsModifier = 2f;
     public float launchForce = 10f;
-    public float horizontalImpulse = 1f;*/
+    public float horizontalImpulse = 1f;
 
-    public float launchForce = 2f;
-    public float upwardsForce = 3f;
+    //public float launchForce = 2f;
+    public float upwardsForce = 1.33f;
 
     void Start()
     {

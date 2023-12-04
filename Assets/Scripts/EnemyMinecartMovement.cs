@@ -9,9 +9,14 @@ public class EnemyMinecartMovement : MonoBehaviour
     public Vector3 colliderOffset = new Vector3(0.1f, 0.18f, 0f);
     float railLength = 2f;
     public LayerMask railLayer;
-    float moveSpeed = 0.02f;
+    public float moveSpeed = 0.02f;
 
     public GameObject projectilePrefab;
+
+    public float projectileInterval;
+
+    public AudioSource audio;
+    public AudioClip clip;
 
 
     void Start()
@@ -25,12 +30,15 @@ public class EnemyMinecartMovement : MonoBehaviour
         {
             SpawnProjectile();
 
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(projectileInterval);
         }
     }
 
     void SpawnProjectile()
     {
+        audio.clip = clip;
+        audio.Play();
+        
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<SpriteRenderer>().sortingOrder = 999;
 
