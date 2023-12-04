@@ -488,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 108}
+  m_AnchoredPosition: {x: -22, y: 206}
   m_SizeDelta: {x: 1715.93, y: 430.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734132931
@@ -503,7 +503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade595333368ec841973137ff3a3e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealSpeed: 0.1
 --- !u!114 &734132932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,8 +523,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "En lugar de sus uniformes escolares, todos llevaban ahora un pelaje brillante
-    y colas escamosas. \xA1Habian sido transformados en castores! "
+  m_text: "En un interrogatorio por resolver las dudas, el lince revelo que no pod\xEDa
+    soportar la idea de que este grupo de estudiantes se destacaran en campos tan
+    emocionantes como la ingenier\xEDa minera y aeroespacial. Su envidia fue la causante
+    que libero la magia que arremetio contra la escuela y sus integrantes."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
   m_sharedMaterial: {fileID: 7143007462711250317, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
@@ -731,7 +732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 159}
+  m_AnchoredPosition: {x: -4, y: -14}
   m_SizeDelta: {x: 1715.93, y: 430.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900148993
@@ -746,7 +747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade595333368ec841973137ff3a3e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealSpeed: 0.1
 --- !u!114 &900148994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,10 +767,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: En un tranquilo dia en la universidad autonoma de Chihuahua, algo extraordinario
-    sucedio. Mientras los estudiantes tomaban apuntes y escuchaban las lecciones
-    rutinarias, un misterioso resplandor ilumino las aulas. De repente, la escuela
-    entera fue envuelta en una luz parpadeante.
+  m_text: "Durante el recorrido del espacio exterior el grupo de castores tuvieron
+    varias suposiciones, \xBFporque estaba pasando esto? y que lo provoco?  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
   m_sharedMaterial: {fileID: 7143007462711250317, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
@@ -884,7 +882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: 252}
+  m_AnchoredPosition: {x: -15, y: 103}
   m_SizeDelta: {x: 1715.93, y: 430.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261143434
@@ -899,7 +897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade595333368ec841973137ff3a3e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealSpeed: 0.1
 --- !u!114 &1261143435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,11 +917,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "El zumbido magico lleno el aire, y en cuestion de segundos, la aburrida
-    sala de clases se transformo en una exuberante mina. Los pupitres se convirtieron
-    en carros mineros, las pizarras en vetas de minerales centelleantes y los focos
-    del techo en estalactitas. Confundidos, los estudiantes se miraron entre si,
-    solo para descubrir que algo aun mas inusual les hab\xEDa sucedido."
+  m_text: Sin embargo, en medio de la maravilla celestial, sus dudas serian resueltas
+    por la presencia inesperada de un lince vestido de traje, que estaba conjurando
+    un hechizo el cual era el causante de todo lo ocurrido. Los castores, con astucia
+    y determinacion, lograron capturar al lince y deshacer sus hechizos.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
   m_sharedMaterial: {fileID: 7143007462711250317, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
@@ -1038,7 +1034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 216}
+  m_AnchoredPosition: {x: -22, y: 185}
   m_SizeDelta: {x: 1715.93, y: 430.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559515348
@@ -1053,7 +1049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade595333368ec841973137ff3a3e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealSpeed: 0.1
 --- !u!114 &1559515349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,10 +1069,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A medida que avanzaban, el miedo se apodero del grupo. Algunos estudiantes
-    retrocedian, temerosos de lo desconocido, mientras otros se abrazaban con inquietud.
-    Sin embargo, en medio de la creciente ansiedad, un estudiante se adelanto para
-    liderar el camino, dando nacimiento al protagonista de esta historia\u2026"
+  m_text: "La aventura de los castores dejo una huella duradera en la escuela, record\xE1ndoles
+    que, a pesar de las diferencias en sus elecciones academicas, todos tenian algo
+    valioso que aportar. Con la magia disipada, los estudiantes regresaron a sus
+    estudios, llevando consigo las lecciones aprendidas en los confines del espacio
+    y las profundidades de la mina."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
   m_sharedMaterial: {fileID: 7143007462711250317, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
@@ -1191,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 216}
+  m_AnchoredPosition: {x: -22, y: 106}
   m_SizeDelta: {x: 1715.93, y: 430.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616676816
@@ -1206,7 +1202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade595333368ec841973137ff3a3e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealSpeed: 0.1
 --- !u!114 &1616676817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,11 +1222,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Entre risas nerviosas y asombro, los alumnos comenzaron a explorar su nueva
-    realidad, pero pronto se dieron cuenta de que esta transformacion no era solo
-    un juego. Un eco misterioso resonaba en los tuneles, y sombras inquietantes se
-    deslizaban por las galerias oscuras de la mina, llenando el aire de un temor
-    palpable.
+  m_text: "A medida que el lince admit\xEDa su envidia y liberaba la escuela de su
+    influencia magica, los castores recuperaron su forma original. Con el lince enfrentando
+    las consecuencias de sus acciones, la escuela volvi\xF3 a la normalidad."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
   m_sharedMaterial: {fileID: 7143007462711250317, guid: 79668f9f2d4a4cb49bc137770a9fdc76, type: 2}
