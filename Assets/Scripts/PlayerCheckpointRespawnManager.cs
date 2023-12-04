@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerRespawner : MonoBehaviour
 {
+    public Animator respawnAnimator;
     public MinesLevelResetter resetter;
 
     // Variables correspondientes al respawn y checkpoints
@@ -21,14 +22,28 @@ public class PlayerRespawner : MonoBehaviour
         if (other.CompareTag("Hazard"))
         {
             // Animacion respawneo
-            transform.position = currentCheckPoint.transform.position;
-            resetter.resetScreens();
+            StartCoroutine(TriggerAnimation());
         }
 
         if (other.CompareTag("CheckPointMarker"))
         {
             currentCheckPointIndex++;
             currentCheckPoint = checkPoints[currentCheckPointIndex];
+
+            other.enabled = false;
         }
+    }
+
+    private IEnumerator TriggerAnimation()
+    {
+        respawnAnimator.SetTrigger("FadeBlack");
+        yield return new WaitForSeconds(0.4f);
+
+        transform.position = currentCheckPoint.transform.position;
+        resetter.resetScreens();
+
+        respawnAnimator.SetTrigger("FadeReturn");
+        yield return new WaitForSeconds(0.16f);
+        respawnAnimator.SetTrigger("ReturnToNull");
     }
 }
