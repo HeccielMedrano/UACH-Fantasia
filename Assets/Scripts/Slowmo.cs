@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Slowmo : MonoBehaviour
 {
@@ -34,5 +35,6 @@ public class Slowmo : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
