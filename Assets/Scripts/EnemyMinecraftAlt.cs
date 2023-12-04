@@ -42,7 +42,7 @@ public class EnemyMinecartAlt : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<SpriteRenderer>().sortingOrder = 999;
 
-        Destroy(projectile, 4f);
+        Destroy(projectile, 9f);
     }
 
 
