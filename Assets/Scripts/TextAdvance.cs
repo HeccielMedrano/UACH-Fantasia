@@ -21,20 +21,24 @@ public class TextAdvance : MonoBehaviour
 
     private void Advance()
     {
-        textObjects[index].SetActive(false);
         index++;
 
         if (index >= textObjects.Length)
             StartCoroutine(NextScene());
         else
+        {
+            textObjects[index - 1].SetActive(false);
             textObjects[index].SetActive(true);
+        }
     }
 
     private IEnumerator NextScene()
     {
+        Time.timeScale = 0.33f;
         anim.SetTrigger("FadeBlack");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1f;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
