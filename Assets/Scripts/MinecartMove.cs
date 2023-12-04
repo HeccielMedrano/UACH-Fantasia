@@ -11,7 +11,7 @@ public class MinecartMove : MonoBehaviour
     float railLength = 2f;
     public LayerMask railLayer;
 
-    float moveSpeed = 0.05f;
+    public float moveSpeed = 0.05f;
 
     void Start()
     {
