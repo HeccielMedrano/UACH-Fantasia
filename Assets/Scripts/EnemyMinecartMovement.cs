@@ -15,6 +15,9 @@ public class EnemyMinecartMovement : MonoBehaviour
 
     public float projectileInterval;
 
+    public AudioSource audio;
+    public AudioClip clip;
+
 
     void Start()
     {
@@ -33,6 +36,9 @@ public class EnemyMinecartMovement : MonoBehaviour
 
     void SpawnProjectile()
     {
+        audio.clip = clip;
+        audio.Play();
+        
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<SpriteRenderer>().sortingOrder = 999;
 

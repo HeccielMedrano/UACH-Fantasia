@@ -12,6 +12,9 @@ public class PlayerRespawner : MonoBehaviour
     GameObject currentCheckPoint;
     int currentCheckPointIndex = 0;
 
+    public AudioSource audio;
+    public AudioClip clip;
+
     void Start()
     {
         currentCheckPoint = checkPoints[currentCheckPointIndex];
@@ -22,6 +25,9 @@ public class PlayerRespawner : MonoBehaviour
         if (other.CompareTag("Hazard"))
         {
             // Animacion respawneo
+            audio.clip = clip;
+            audio.Play();
+            
             StartCoroutine(TriggerAnimation());
         }
 

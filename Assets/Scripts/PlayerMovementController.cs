@@ -56,6 +56,9 @@ public class PlayerMovementController : MonoBehaviour
     //Variable animator
     private Animator animator;
 
+    public AudioSource playerAudio;
+    public AudioClip[] playerSFX;
+
 
     ///////////////////////
     // Seccion de codigo //
@@ -91,6 +94,9 @@ public class PlayerMovementController : MonoBehaviour
         // Salto
         if (Input.GetButtonDown("Jump"))
         {
+            playerAudio.clip = playerSFX[2];
+            playerAudio.Play();
+
             jumpTimer = Time.time + jumpDelay;
             //animacion
             animator.SetBool("Jumping", true);
@@ -119,6 +125,9 @@ public class PlayerMovementController : MonoBehaviour
         // Condicionales y metodos referentes al dash
         if (dashInput && canDash)
         {
+            playerAudio.clip = playerSFX[1];
+            playerAudio.Play();
+
             isDashing = true;
             canDash = false;
             dashingDirection = new Vector2(Input.GetAxisRaw("HorizontalMovement"), Input.GetAxisRaw("VerticalMovement"));
@@ -171,6 +180,9 @@ public class PlayerMovementController : MonoBehaviour
     // Metodos referentes a caminar
     private void Walk(Vector2 direction)
     {
+        /*playerAudio.clip = playerSFX[0];
+        playerAudio.Play();*/
+
         rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
         //Activar animaicon de caminar
         if(x!=0)
