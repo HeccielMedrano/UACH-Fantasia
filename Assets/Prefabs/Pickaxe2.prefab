@@ -103,10 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLaunchForce: 5
   maxLaunchForce: 7
-  upwardsModifier: 2
-  launchForce: 10
-  horizontalImpulse: 1
-  upwardsForce: 10
+  upwardsModifier: 15
+  launchForce: 15
+  horizontalImpulse: 3
+  upwardsForce: 15
 --- !u!50 &4124419203955041949
 Rigidbody2D:
   serializedVersion: 4
