@@ -14,7 +14,7 @@ public class fondo : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        material = GetComponent<SpriteRenderer>().material;
+        //material = GetComponent<SpriteRenderer>().material;
         jugadorRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     
     }
@@ -22,7 +22,7 @@ public class fondo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        offset = (jugadorRB.velocity.x*0.1f)* velocidadMovimiento*Time.deltaTime;
-        material.mainTextureOffset += offset;
+        //offset = (jugadorRB.velocity.x*0.1f)* velocidadMovimiento*Time.deltaTime;
+        //material.mainTextureOffset += offset;
     }
 }

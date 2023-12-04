@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerRespawner : MonoBehaviour
 {
+    public MinesLevelResetter resetter;
+
     // Variables correspondientes al respawn y checkpoints
     [SerializeField] GameObject[] checkPoints;
     GameObject currentCheckPoint;
@@ -20,6 +22,7 @@ public class PlayerRespawner : MonoBehaviour
         {
             // Animacion respawneo
             transform.position = currentCheckPoint.transform.position;
+            resetter.resetScreens();
         }
 
         if (other.CompareTag("CheckPointMarker"))

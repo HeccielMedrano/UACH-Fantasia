@@ -7,7 +7,6 @@ public class GravityManager : MonoBehaviour
     void Start()
     {
         Physics2D.gravity = new Vector3(0f, -1.625f, 0f);
-        Debug.Log("La gravedad esta cambiada a " + Physics.gravity);
     }
 
     void Update()

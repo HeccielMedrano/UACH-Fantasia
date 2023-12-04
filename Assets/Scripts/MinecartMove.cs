@@ -22,7 +22,6 @@ public class MinecartMove : MonoBehaviour
     void Update()
     {
         onRails = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, railLength, railLayer);
-        Debug.Log(onRails);
 
         if (onRails)
         {
