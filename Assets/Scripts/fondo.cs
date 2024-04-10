@@ -20,9 +20,9 @@ public class fondo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update( )
     {
-        offset = (jugadorRB.velocity.x*0.1f)* velocidadMovimiento*Time.deltaTime;
+        offset = (jugadorRB.position.x * 0.1f) * velocidadMovimiento * Time.deltaTime;
         material.mainTextureOffset += offset;
     }
 }
